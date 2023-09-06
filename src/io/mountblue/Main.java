@@ -61,7 +61,8 @@ public class Main {
         findNumberOfMatchesPlayedPerYear(matches);
         findNumberOfMatchesWonByAllTeams(matches);
         findExtraRunsConcededByAllTeamsForParticularYear(matches, deliveries);
-        findTopEconomicalBowlersForParticularYear(matches, deliveries);
+        findTopEconomicalBowlersForParticularYear(matches, deliveries);                    // i am assuming top 10...
+        findBowlerWhoTookMostWicketsByTeamIn2016(matches, deliveries);
     }
 
     private static void findBowlerWhoTookMostWicketsByTeamIn2016(List<Match> matches, List<Delivery> deliveries) {
