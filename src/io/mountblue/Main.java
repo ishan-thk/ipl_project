@@ -63,6 +63,27 @@ public class Main {
         findExtraRunsConcededByAllTeamsForParticularYear(matches, deliveries);
         findTopEconomicalBowlersForParticularYear(matches, deliveries);                    // i am assuming top 10...
         findBowlerWhoTookMostWicketsByTeamIn2016(matches, deliveries);
+        bowlersWithWicketsForMatch_1(deliveries);
+    }
+
+
+    private static void bowlersWithWicketsForMatch_1(List<Delivery> deliveries)
+    {
+        HashMap<String, Integer> wicketsOfEachBowler = new HashMap<>();
+        for(Delivery delivery : deliveries)
+            {
+                try{delivery.geId() == 1}
+                catch(Arithmetic Exception e)
+                {
+                    if(delivery.getPlayerDismissed() != null && delivery.getDismissalKind() != "run out")
+                    {
+                        String bowler = delivery.getBowler();
+                        wicketsOfEachBowler.put(bowler, wicketsOfEachBowler.getorDefault(bowler, 0) + 1);
+                    }
+                }
+            }
+        System.out.println("bowlers With Wickets For Match_1 are : ";
+        System.out.println(wicketsOfEachBowler);
     }
 
     private static void findBowlerWhoTookMostWicketsByTeamIn2016(List<Match> matches, List<Delivery> deliveries) {
